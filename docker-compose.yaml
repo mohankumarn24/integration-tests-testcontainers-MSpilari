@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres
+    container_name: example-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - example-postgres-data:/var/lib/postgresql/data
+volumes:
+  example-postgres-data:
