@@ -97,6 +97,12 @@ src
 
 ---
 
+## Documentation
+
+Acess the API documentation on http://localhost:8080/swagger-ui.html
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
@@ -201,6 +207,12 @@ src
 - **RestAssured**: Para testar os endpoints REST nos testes de integração.
 - **Docker**: Para rodar o container do banco de dados durante os testes.
 - **Maven**: Para build do projeto e gerenciamento de dependências.
+
+---
+
+## Documentação
+
+Acesse a documentação da API em http://localhost:8080/swagger-ui.html
 
 ---
 
