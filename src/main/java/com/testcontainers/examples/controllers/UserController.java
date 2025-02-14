@@ -39,6 +39,11 @@ public class UserController {
     }
 
     @GetMapping("/")
+    @Operation(summary = "Get users with pagination")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "List with users and some info about pagination of the API", content = @Content(mediaType = "application/json")),
+            @ApiResponse(responseCode = "500", description = "default error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDto.class)))
+    })
     public ResponseEntity<Page<UserModel>> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
