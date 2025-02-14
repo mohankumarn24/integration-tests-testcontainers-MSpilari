@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.testcontainers.examples.dto.CreateUserDto;
 import com.testcontainers.examples.dto.ErrorResponseDto;
-import com.testcontainers.examples.models.UserModel;
+import com.testcontainers.examples.dto.UserResponseDto;
 import com.testcontainers.examples.services.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -44,13 +44,13 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "List with users and some info about pagination of the API", content = @Content(mediaType = "application/json")),
             @ApiResponse(responseCode = "500", description = "default error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDto.class)))
     })
-    public ResponseEntity<Page<UserModel>> getAllUsers(
+    public ResponseEntity<Page<UserResponseDto>> getAllUsers(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "id") String sortBy) {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
-        Page<UserModel> users = userService.allUsers(pageable);
+        Page<UserResponseDto> users = userService.allUsers(pageable);
 
         return ResponseEntity.ok().body(users);
     }
@@ -62,7 +62,7 @@ public class UserController {
             @ApiResponse(responseCode = "400", description = "Wrong/not valid UUID", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDto.class))),
             @ApiResponse(responseCode = "500", description = "default error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponseDto.class)))
     })
-    public ResponseEntity<UserModel> getUserById(@PathVariable String id) {
+    public ResponseEntity<UserResponseDto> getUserById(@PathVariable String id) {
         return ResponseEntity.ok().body(userService.findById(UUID.fromString(id)));
     }
 
@@ -82,7 +82,7 @@ public class UserController {
     @PostMapping("/")
     @Operation(summary = "Create a new user", description = "Return 201 if the user was successfully created.")
     @ApiResponse(responseCode = "201", description = "User created succesfully.")
-    public ResponseEntity<UserModel> createUser(@RequestBody CreateUserDto userInfo) {
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody CreateUserDto userInfo) {
         var newUser = userService.save(userInfo);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
