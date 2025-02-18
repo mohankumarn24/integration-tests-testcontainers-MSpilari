@@ -25,6 +25,7 @@ public class UserService {
     }
 
     @Transactional
+    @CachePut(value = "users", key = "#result.id")
     public UserResponseDto save(CreateUserDto user) {
         var newUser = new UserModel(user.name());
 
