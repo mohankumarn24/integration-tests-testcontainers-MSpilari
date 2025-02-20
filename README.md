@@ -94,6 +94,8 @@ src
 - **RestAssured**: For testing REST endpoints in the integration tests.
 - **Docker**: To run the database container during testing.
 - **Maven**: For building the project and managing dependencies.
+- **Swagger**: For the documentation of the project.
+- **Redis**: For caching some of the responses of endpoints.
 
 ---
 
@@ -207,6 +209,8 @@ src
 - **RestAssured**: Para testar os endpoints REST nos testes de integração.
 - **Docker**: Para rodar o container do banco de dados durante os testes.
 - **Maven**: Para build do projeto e gerenciamento de dependências.
+- **Swagger**: Para a documentação do projeto.
+- **Redis**: Armazenamento de cache.
 
 ---
 
