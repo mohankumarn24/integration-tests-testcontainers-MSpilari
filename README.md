@@ -2,6 +2,7 @@
 
 This project demonstrates how to implement a simple CRUD (Create, Read, Update, Delete) application using **Spring Boot** and **Testcontainers** for integration testing. The application manages users stored in a **PostgreSQL** database, and the tests ensure the code runs in a real database environment within Docker containers.
 
+Refer: https://dev.to/mspilari/integration-tests-on-spring-boot-with-postgresql-and-testcontainers-4dpc
 ## Table of Contents
 
 - [Project Setup](#project-setup)
@@ -27,7 +28,7 @@ This project demonstrates how to implement a simple CRUD (Create, Read, Update, 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/MSpilari/integration_tests_with_testcontainers.git
+   git clone https://github.com/mohankumarn24/integration_tests_with_testcontainers.git
    ```
 
 2. Navigate to the project directory:
@@ -109,119 +110,8 @@ Acess the API documentation on http://localhost:8080/swagger-ui.html
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
----
+Forked from https://github.com/MSpilari/integration_tests_with_testcontainers
 
 ---
-
-# Spring Boot CRUD com Testcontainers
-
-Este projeto demonstra como implementar uma aplicação simples de CRUD (Criar, Ler, Atualizar, Deletar) usando **Spring Boot** e **Testcontainers** para testes de integração. A aplicação gerencia usuários armazenados em um banco de dados **PostgreSQL**, e os testes garantem que o código seja executado em um ambiente real de banco de dados dentro de containers Docker.
-
-## Índice
-
-- [Configuração do Projeto](#configuração-do-projeto)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Executando a Aplicação](#executando-a-aplicação)
-  - [Executando Testes](#executando-testes)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Licença](#licença)
-
----
-
-## Configuração do Projeto
-
-### Pré-requisitos
-
-- **Java 21**: Certifique-se de ter o JDK 21 instalado.
-- **Maven**: O projeto usa o Maven como ferramenta de build.
-- **Docker**: O Docker é necessário para executar o Testcontainers, que gerencia o container PostgreSQL para testes.
-
-### Executando a Aplicação
-
-1. Clone o repositório:
-
-   ```bash
-   git clone https://github.com/mohankumarn24/integration_tests_with_testcontainers.git
-   ```
-
-2. Navegue até o diretório do projeto:
-
-   ```bash
-   cd integration_tests_with_testcontainers
-   ```
-
-3. Instale as dependências e compile o projeto:
-
-   ```bash
-   mvn clean install
-   ```
-
-4. Inicie a aplicação executando:
-
-   ```bash
-   mvn spring-boot:run
-   ```
-
-5. A aplicação será iniciada em uma porta padrão (por exemplo, `http://localhost:8080`), e você pode interagir com a API usando Postman, Insomnia ou cURL.
-
----
-
-### Executando Testes
-
-Para rodar os testes de integração utilizando Testcontainers, execute o seguinte comando:
-
-```bash
-mvn test
-```
-
-Os testes usarão um container PostgreSQL gerenciado pelo Testcontainers, garantindo um ambiente de banco de dados limpo e isolado para cada execução de teste.
-
----
-
-## Estrutura do Projeto
-
-```
-src
-├── main
-│   ├── java
-│   │   └── com.example
-│   │       ├── controllers     # Controladores REST para lidar com requisições HTTP
-│   │       ├── models          # Entidades JPA (ex: UserModel)
-│   │       ├── repositories    # Repositórios de dados para operações com o banco
-│   │       └── services        # Camada de lógica de negócios
-│   └── resources
-│       └── application.properties   # Configuração do banco de dados
-├── test
-│   └── java
-│       └── com.example
-│           └── controllers      # Testes de integração com RestAssured & Testcontainers
-```
-
----
-
-## Tecnologias Utilizadas
-
-- **Spring Boot 3.3.4**: Para construção da API REST do backend.
-- **Spring Data JPA**: Para interação com o banco de dados e ORM.
-- **PostgreSQL**: O banco de dados relacional utilizado para persistência de dados.
-- **Testcontainers**: Para criar um container PostgreSQL e executar os testes de integração em um ambiente isolado.
-- **RestAssured**: Para testar os endpoints REST nos testes de integração.
-- **Docker**: Para rodar o container do banco de dados durante os testes.
-- **Maven**: Para build do projeto e gerenciamento de dependências.
-- **Swagger**: Para a documentação do projeto.
-- **Redis**: Armazenamento de cache.
-
----
-
-## Documentação
-
-Acesse a documentação da API em http://localhost:8080/swagger-ui.html
-
----
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
 
 ---
