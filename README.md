@@ -18,7 +18,7 @@ This project demonstrates how to implement a simple CRUD (Create, Read, Update, 
 
 ### Prerequisites
 
-- **Java 21**: Ensure that you have JDK 21 installed.
+- **Java 17[21]**: Ensure that you have JDK 17[21] installed.
 - **Maven**: The project uses Maven as the build tool.
 - **Docker**: Docker is required to run Testcontainers, which manages the PostgreSQL container for testing.
 
