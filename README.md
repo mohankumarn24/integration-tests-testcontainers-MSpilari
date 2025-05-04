@@ -142,7 +142,7 @@ Este projeto demonstra como implementar uma aplicação simples de CRUD (Criar, 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/MSpilari/integration_tests_with_testcontainers.git
+   git clone https://github.com/mohankumarn24/integration_tests_with_testcontainers.git
    ```
 
 2. Navegue até o diretório do projeto:
